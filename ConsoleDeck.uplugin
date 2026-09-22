@@ -1,0 +1,27 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0.0",
+	"EngineVersion": "5.8.0",
+	"FriendlyName": "ConsoleDeck - In-Game Cheat Menu Built From Your Own Code",
+	"Description": "ConsoleDeck brings no cheats of its own. It shows what your project can already do: mark a function where it already lives - UFUNCTION(BlueprintCallable, meta=(ConsoleDeck=\"Player|God Mode\")) - and it appears in the menu. There is no list to maintain, which is the whole difference to a hand-written debug menu: the function somebody added yesterday is in the menu today, and the one they deleted is gone. The catalog is built once at startup by walking the reflection data, and how long that walk took is printed in the header of the menu itself, because a tool that costs time should say so. Gamepad first: d-pad and shoulder buttons, a focus frame and a repeat rate, no mouse needed - that is the case where the console fails, on a pad, in a packaged build, with no keyboard in the room. Types instead of text: a bool becomes a switch, a number gets a slider with the limits from ClampMin/ClampMax, an enum becomes a choice, a string becomes a field or a list of presets. The call goes through ProcessEvent with a packed parameter buffer, so anything callable is callable here. Entries whose target does not exist right now are shown greyed out with the reason - no GameMode of this class in this world - instead of being silently left out, because a missing button looks like a bug. And it is still there in a packaged Shipping build, locked: it opens only after ConsoleDeck.Unlock <word> or when the project setting allows it. Not compiled out, because the bugs worth chasing are the ones that only happen in Shipping. Function metadata does not survive cooking, so the editor bakes the catalog into the project config and the packaged build reads that - the menu you see on the pad is the menu you built in the editor. Drawn on UCanvas from an AHUD, no UMG, no editor module.",
+	"Category": "Engine Tools",
+	"CreatedBy": "Silvan Teufel",
+	"CreatedByURL": "https://silvan.teufel-engineering.com",
+	"DocsURL": "https://wiki.teufel-engineering.com/en/ConsoleDeck/documentation",
+	"SupportURL": "mailto:teufelsilvan@gmail.com",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "ConsoleDeck",
+			"Type": "Runtime",
+			"LoadingPhase": "PreDefault",
+			"PlatformAllowList": [
+				"Win64"
+			]
+		}
+	]
+}
